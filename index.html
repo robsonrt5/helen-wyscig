@@ -1,7 +1,3 @@
-<!-- Wymuszenie redeploy GitHub Pages -->
-
-
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,6 +9,7 @@
       overflow: hidden;
       background: lightblue;
     }
+
     .zwierze {
       position: absolute;
       top: 50%;
@@ -20,59 +17,59 @@
       width: 180px;
       left: -200px;
     }
+
     @keyframes biegnij {
       0% { left: -200px; }
       100% { left: 100vw; }
     }
-    /* Konkretne czasy startu kolejnych zwierząt */
+
     .start1 { animation: biegnij 10s linear forwards; }
     .start2 { animation: biegnij 10s linear forwards; animation-delay: 1s; }
-    .start3 { animation: biegnij 10s linear forwards; animation-delay: 2s; }
     .start4 { animation: biegnij 10s linear forwards; animation-delay: 3s; }
 
+    /* Lis, który wyskakuje */
     #lis {
-  display: none;
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  width: 300px;
-  transform: translate(-50%, -50%);
-  z-index: 10;
-  animation: wyskocz 1s ease-out forwards;
-}
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      width: 300px;
+      transform: translate(-50%, -50%);
+      z-index: 10;
+      animation: wyskocz 1s ease-out forwards;
+    }
 
-@keyframes wyskocz {
-  0% { transform: translate(-50%, -50%) scale(0.1); opacity: 0; }
-  100% { transform: translate(-50%, -50%) scale(1); opacity: 1; }
-}
-
+    @keyframes wyskocz {
+      0% { transform: translate(-50%, -50%) scale(0.1); opacity: 0; }
+      100% { transform: translate(-50%, -50%) scale(1); opacity: 1; }
+    }
   </style>
 </head>
 <body>
-  <!-- Animowane postacie -->
-  <img id="kogut" class="zwierze start1"  src="https://mir-s3-cdn-cf.behance.net/project_modules/disp/3cf4db71598131.5bca9165e0729.gif"  alt="kogut2">
 
-<img id="strus" class="zwierze start2" src="https://cdn.dribbble.com/userupload/23162831/file/original-1da2848b93b7cf0a4b48e75a5eec54fb.gif" alt="struś2">
-<img id="lis" class="zwierze start3" src="https://giffiles.alphacoders.com/398/39809.gif" alt="lemur2">
-<img id="lis" src="https://giffiles.alphacoders.com/398/39809.gif" alt="lis">
+  <!-- Zwierzęta biegnące -->
+  <img id="kogut" class="zwierze start1" src="https://mir-s3-cdn-cf.behance.net/project_modules/disp/3cf4db71598131.5bca9165e0729.gif" alt="kogut">
+  <img id="strus" class="zwierze start2" src="https://cdn.dribbble.com/userupload/23162831/file/original-1da2848b93b7cf0a4b48e75a5eec54fb.gif" alt="struś">
+  <img id="lemur" class="zwierze start4" src="https://media1.tenor.com/m/VQh02Y06meIAAAAC/fox-jump.gif" alt="lemur">
 
+  <!-- Lis wyskakujący później -->
+  <img id="lis" src="https://giffiles.alphacoders.com/398/39809.gif" alt="lis">
 
   <!-- Dźwięk koguta -->
   <audio id="dzwiekKoguta" src="https://www.soundjay.com/animal/rooster-crow-01.mp3" preload="auto"></audio>
 
   <script>
-   window.onload = () => {
-  document.getElementById("kogut").classList.add("start1");
-  document.getElementById("strus").classList.add("start2");
-  document.getElementById("lemur").classList.add("start4");
-  document.getElementById("dzwiekKoguta").play();
+    window.onload = () => {
+      document.getElementById("kogut").classList.add("start1");
+      document.getElementById("strus").classList.add("start2");
+      document.getElementById("lemur").classList.add("start4");
+      document.getElementById("dzwiekKoguta").play();
 
-  // Po 5 sekundach pokaż lisa na środku
-  setTimeout(() => {
-    document.getElementById("lis").style.display = "block";
-  }, 5000);
-};
-
+      // Pokazanie lisa na środku po 5 sekundach
+      setTimeout(() => {
+        document.getElementById("lis").style.display = "block";
+      }, 5000);
+    };
   </script>
 </body>
 </html>
