@@ -23,9 +23,9 @@
       100% { left: 100vw; }
     }
 
-    .start1 { animation: biegnij 10s linear forwards; }
-    .start2 { animation: biegnij 10s linear forwards; animation-delay: 1s; }
-    .start4 { animation: biegnij 10s linear forwards; animation-delay: 3s; }
+    .start1 { animation: biegnij 10s linear forwards;  animation-delay: 2s; }
+    .start2 { animation: biegnij 10s linear forwards; animation-delay: 0s; }
+    .start4 { animation: biegnij 10s linear forwards; animation-delay: 1s; }
 
     /* Lis, który wyskakuje */
     #lis {
@@ -48,10 +48,10 @@
 <body>
 
   <!-- Zwierzęta biegnące -->
-  <img id="kogut" class="zwierze start1" src="https://mir-s3-cdn-cf.behance.net/project_modules/disp/3cf4db71598131.5bca9165e0729.gif" alt="kogut">
+  
   <img id="strus" class="zwierze start2" src="https://cdn.dribbble.com/userupload/23162831/file/original-1da2848b93b7cf0a4b48e75a5eec54fb.gif" alt="struś">
   <img id="lemur" class="zwierze start4" src=" https://giffiles.alphacoders.com/398/39809.gif" alt="lemur">
- 
+ <img id="kogut" class="zwierze start1" src="https://mir-s3-cdn-cf.behance.net/project_modules/disp/3cf4db71598131.5bca9165e0729.gif" alt="kogut">
 
   <!-- Lis wyskakujący później -->
   <img id="lis" src="https://media1.tenor.com/m/VQh02Y06meIAAAAC/fox-jump.gif" alt="lis">
@@ -61,9 +61,11 @@
 
   <script>
     window.onload = () => {
-      document.getElementById("kogut").classList.add("start1");
-      document.getElementById("strus").classList.add("start2");
+       document.getElementById("strus").classList.add("start2");
       document.getElementById("lemur").classList.add("start4");
+      document.getElementById("kogut").classList.add("start1");
+     
+      
       document.getElementById("dzwiekKoguta").play();
 
       // Pokazanie lisa na środku po 5 sekundach
