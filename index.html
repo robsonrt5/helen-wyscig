@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Wyścig animowanych zwierząt</title>
+  <style>
+    body {
+      margin: 0;
+      overflow: hidden;
+      background: lightblue;
+    }
+    .zwierze {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 180px;
+      left: -200px;
+    }
+    @keyframes biegnij {
+      0% { left: -200px; }
+      100% { left: 100vw; }
+    }
+    /* Konkretne czasy startu kolejnych zwierząt */
+    .start1 { animation: biegnij 10s linear forwards; }
+    .start2 { animation: biegnij 10s linear forwards; animation-delay: 1s; }
+    .start3 { animation: biegnij 10s linear forwards; animation-delay: 2s; }
+    .start4 { animation: biegnij 10s linear forwards; animation-delay: 3s; }
+  </style>
+</head>
+<body>
+  <!-- Animowane postacie -->
+  <img id="kogut" class="zwierze" src="https://i.imgur.com/your-rooster-gif.gif" alt="kogut">
+  <img id="strus" class="zwierze" src="https://i.imgur.com/your-ostrich-gif.gif" alt="straus">
+  <img id="lis" class="zwierze" src="https://i.imgur.com/your-fox-gif.gif" alt="lis">
+  <img id="lemur" class="zwierze" src="https://i.imgur.com/your-lemur-gif.gif" alt="lemur">
+
+  <!-- Dźwięk koguta -->
+  <audio id="dzwiekKoguta" src="https://www.soundjay.com/animal/rooster-crow-01.mp3" preload="auto"></audio>
+
+  <script>
+    window.onload = () => {
+      document.getElementById("kogut").classList.add("start1");
+      document.getElementById("strus").classList.add("start2");
+      document.getElementById("lis").classList.add("start3");
+      document.getElementById("lemur").classList.add("start4");
+      document.getElementById("dzwiekKoguta").play();
+    };
+  </script>
+</body>
+</html>
